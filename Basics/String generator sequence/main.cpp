@@ -2,10 +2,25 @@
 #include <vector>
 #include <string>
 #include <fstream>
-#include <ranges>
+#include <algorithm>
 
 // Utilize std::string_view for static data to avoid unnecessary copies
 constexpr std::string_view alphabet[] = {"a", "b"};
+
+// Recursive function to generate all combinations of the alphabet
+void generateCombinations(const std::string& prefix, int length, std::ofstream& outFile) {
+    if (length == 0) {
+        if (!prefix.empty()) { // Skip the empty prefix case, as it's handled separately
+            outFile << ", " << prefix;
+        }
+        return;
+    }
+    
+    for (const auto& letter : alphabet) {
+        generateCombinations(prefix + std::string(letter), length - 1, outFile);
+    }
+
+}
 
 // Function to generate and write the specific series of strings for the alphabet {a, b} directly to a file
 void generateAndWriteSeries(int seriesLength, const std::string& fileName) {
@@ -16,26 +31,24 @@ void generateAndWriteSeries(int seriesLength, const std::string& fileName) {
     }
 
     // Write the initial empty set
-    outFile << "∅";
-    
+    outFile << "{ε";
+
     // Generate and write the series up to the specified length, capped at 1000
-    for (int i = 0; i < seriesLength && i < std::size(alphabet); ++i) {
-        outFile << ", " << alphabet[i];
+    for (int i = 1; i <= seriesLength; ++i) {
+        generateCombinations("", i, outFile);
     }
 
-    // Special case for concatenating 'a' and 'b' to form 'ab'
-    if (seriesLength > 2) {
-        outFile << ", ab";
-    }
-
+    outFile << "}";
+    
     std::cout << "Series written to " << fileName << std::endl;
 }
 
 int main() {
     int seriesLength;
-    std::cout << "Enter the series length (up to 1000): ";
+    std::cout << "Enter the power ";
     std::cin >> seriesLength;
 
+    // Limit the seriesLength to a maximum of 1000
     seriesLength = std::min(seriesLength, 1000);
 
     generateAndWriteSeries(seriesLength, "string_sequence.txt");
