@@ -5,6 +5,7 @@
 #include <algorithm>
 
 // Utilize std::string_view for static data to avoid unnecessary copies
+// BECAUSE SETS DO NOT HAVE REPETITIONS
 constexpr std::string_view alphabet[] = {"a", "b"};
 
 // Recursive function to generate all combinations of the alphabet
@@ -31,6 +32,7 @@ void generateAndWriteSeries(int seriesLength, const std::string& fileName) {
     }
 
     // Write the initial empty set
+    // This is {a,b}  0
     outFile << "{ε";
 
     // Generate and write the series up to the specified length, capped at 1000
@@ -48,7 +50,6 @@ int main() {
     std::cout << "Enter the power ";
     std::cin >> seriesLength;
 
-    // Limit the seriesLength to a maximum of 1000
     seriesLength = std::min(seriesLength, 1000);
 
     generateAndWriteSeries(seriesLength, "string_sequence.txt");
