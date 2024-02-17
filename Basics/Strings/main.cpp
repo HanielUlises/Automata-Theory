@@ -4,7 +4,7 @@
 #include <fstream>
 #include <algorithm>
 
-// Utilize std::string_view for static data to avoid unnecessary copies
+// Utilized std::string_view for static data to avoid unnecessary copies
 // BECAUSE SETS DO NOT HAVE REPETITIONS
 constexpr std::string_view alphabet[] = {"a", "b"};
 
