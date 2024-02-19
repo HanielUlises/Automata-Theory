@@ -3,6 +3,8 @@
 #include <string>
 #include <fstream>
 #include <algorithm>
+#include <random>
+#include <limits>
 
 // Utilized std::string_view for static data to avoid unnecessary copies
 // BECAUSE SETS DO NOT HAVE REPETITIONS
@@ -42,15 +44,28 @@ void generateAndWriteSeries(int seriesLength, const std::string& fileName) {
 
     outFile << "}";
     
-    std::cout << "Series written to " << fileName << std::endl;
+    std::cout << "Series succesfully written to " << fileName << std::endl;
 }
 
-int main() {
-    int seriesLength;
-    std::cout << "Enter the power ";
+int main(int argc, char* argv[]) {
+    int seriesLength = 0;
+    std::cout << "Enter the power (or press Enter to let the computer choose): ";
+
     std::cin >> seriesLength;
 
-    seriesLength = std::min(seriesLength, 1000);
+    if (std::cin.fail()) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_int_distribution<> dist(1, 1000);
+
+        seriesLength = dist(gen);
+        std::cout << "Computer-selected power: " << seriesLength << std::endl;
+    } else {
+            seriesLength = std::min(seriesLength, 1000);
+    }
 
     generateAndWriteSeries(seriesLength, "string_sequence.txt");
 
