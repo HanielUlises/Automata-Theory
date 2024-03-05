@@ -1,8 +1,8 @@
-CXX=g++
+CXX=clang++
 
 CXXFLAGS=-std=c++20 -Wall -Wextra -O2
 
-TARGET=main
+TARGET=main.exe
 
 SOURCES=main.cpp
 
