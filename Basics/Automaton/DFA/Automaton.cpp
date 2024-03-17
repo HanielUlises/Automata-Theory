@@ -17,14 +17,12 @@ bool State::isFinal() const {
 }
 
 Automaton::Automaton(const std::string& word) : word(word) {
-    // Define all states
     auto q1 = std::make_shared<State>();
     auto q2 = std::make_shared<State>();
     auto q3 = std::make_shared<State>();
     auto q4 = std::make_shared<State>();
     auto qF = std::make_shared<State>(true);
 
-    // Add transitions based on the provided state diagram
     q1->addTransition('0', q4);
     q1->addTransition('1', q2);
 
