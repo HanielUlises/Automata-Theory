@@ -110,12 +110,14 @@ struct DFA {
     }
 
     bool accepts(const std::string& input) const {
-        int currentState = *initial.begin();
-        for (char c : input) {
-            currentState = transition[{currentState, c - '0'}];
-        }
-        return accepting.find(currentState) != accepting.end();
+    int currentState = *initial.begin();
+    for (char c : input) {
+        int inputDigit = c - '0';
+        currentState = transition.at({currentState, inputDigit});
     }
+    return accepting.find(currentState) != accepting.end();
+}
+
 };
 
 // Converts NFA to DFA using subset construction algorithm
