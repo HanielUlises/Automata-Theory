@@ -4,16 +4,16 @@
 #include <map>
 #include <queue>
 
-class NFA {
+// Nondeterministic Finite Automaton
+struct NFA {
     int states;
-    std::set<int> **transition; // Pointer to pointer
-    std::set<int> initial;
-    std::set<int> accepting;
+    std::set<int> **transition; // Array of sets for transition functions
+    std::set<int> initial; // Initial states
+    std::set<int> accepting; // Accepting states
 
-public:
     NFA(int states) {
         this->states = states;
-        transition = new std::set<int>*[2]; // Allocate memory for array of pointers
+        transition = new std::set<int>*[2]; // Two transition functions for binary alphabet
         for (int i = 0; i < 2; ++i) {
             transition[i] = new std::set<int>[states];
         }
@@ -82,13 +82,13 @@ public:
     }
 };
 
-class DFA {
+// Deterministic Finite Automaton
+struct DFA {
     int states;
     std::map<std::pair<int, int>, int> transition;
     std::set<int> initial;
     std::set<int> accepting;
 
-public:
     DFA(int states) {
         this->states = states;
     }
@@ -118,6 +118,7 @@ public:
     }
 };
 
+// Converts NFA to DFA using subset construction algorithm
 DFA subsetConstruction(const NFA& nfa) {
     DFA dfa(1); // Start with one state
     std::queue<std::set<int>> unmarkedStates;
@@ -175,6 +176,7 @@ int main() {
 
     DFA dfa = subsetConstruction(nfa);
 
+    // Check if NFA and DFA accept the same input
     std::cout << "NFA accepts 010? " << (nfa.accepts("010") ? "Yes" : "No") << std::endl;
     std::cout << "DFA accepts 010? " << (dfa.accepts("010") ? "Yes" : "No") << std::endl;
 
