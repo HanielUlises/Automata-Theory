@@ -58,7 +58,7 @@ void concatenateStrings(String *result, const String *str1, const String *str2) 
     }
 }
 
-// Function to free memory
+// Function to free allocated memory
 void cleanupString(String *str) {
     CharNode *current = str->head;
     while (current != NULL) {
@@ -70,7 +70,7 @@ void cleanupString(String *str) {
     str->length = 0;
 }
 
-// Function to print MyString
+// Function to print a given string
 void printString(const String *str) {
     CharNode *current = str->head;
     while (current != NULL) {
