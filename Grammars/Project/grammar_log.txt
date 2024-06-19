@@ -1,0 +1,4 @@
+B -> (RB | Current string: (R
+R -> ) | Current string: (R)
+B -> ε | Current string: (R)
+Successfully parsed: (R)
