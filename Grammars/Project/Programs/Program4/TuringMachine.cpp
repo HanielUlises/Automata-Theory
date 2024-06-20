@@ -164,7 +164,7 @@ void TuringMachine::visualize(const std::string& input) {
         SDL_DestroyTexture(textTexture);
 
         SDL_RenderPresent(renderer);
-        SDL_Delay(500);
+        SDL_Delay(5000);
 
         char currentChar = tape[head];
         if (transitions[currentState].find(currentChar) == transitions[currentState].end()) {
