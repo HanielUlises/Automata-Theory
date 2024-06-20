@@ -1,19 +1,41 @@
-Attempting to parse: (()(((((()))()()))()((((()(()((())()())))(((()))(((((()))())((())(())))((((((())()(()))((()(((()()))(()())(())(()))()()()())()()((((())(()(())))(())))())(((())(((()))((())()())())()())()(((()(((((())()(((()))))))()(()(()(()((()(()(()((()())((()(())()())()(()())(()())(())))()()())((()))()((())))))()()(()))))(())())))()(()((()(()))((())((())())((((()))((()()))))()(()()((((()())()))))((((())()(()))(()(()((()(())))()())()()))()()))())())()()())()(()(())((()()))))(())))))()(()))))())(((()()(()(())))(()(())((())))(()))(()((()())))))))()(((()((())))))((()(()()()()((((((((()())()(()))()())())())))(())())())))((((()))))((())()(((()(((()())))(())((((((())))(()))(()))(((()()())))(()((()())()((()(()((())()(())()(((()()))()))))((((((()))((()((()(()))()))((())((()()()(((()))())()()))((())(((()())())(((()))))()((())((()()()()((()()(()(()()((((()(())))))(((()(((()(((()(()))(())()(())))))()))))()(((()((((()))))(()())(())(()(()(()))()(()((((()((()()()())))()((())()()())(())))()((((())()())(())))(()(()(())))))))))))))))))))))))))))))))
-Remaining Input: (()(((((()))()()))()((((()(()((())()())))(((()))(((((()))())((())(())))((((((())()(()))((()(((()()))(()())(())(()))()()()())()()((((())(()(())))(())))())(((())(((()))((())()())())()())()(((()(((((())()(((()))))))()(()(()(()((()(()(()((()())((()(())()())()(()())(()())(())))()()())((()))()((())))))()()(()))))(())())))()(()((()(()))((())((())())((((()))((()()))))()(()()((((()())()))))((((())()(()))(()(()((()(())))()())()()))()()))())())()()())()(()(())((()()))))(())))))()(()))))())(((()()(()(())))(()(())((())))(()))(()((()())))))))()(((()((())))))((()(()()()()((((((((()())()(()))()())())())))(())())())))((((()))))((())()(((()(((()())))(())((((((())))(()))(()))(((()()())))(()((()())()((()(()((())()(())()(((()()))()))))((((((()))((()((()(()))()))((())((()()()(((()))())()()))((())(((()())())(((()))))()((())((()()()()((()()(()(()()((((()(())))))(((()(((()(((()(()))(())()(())))))()))))()(((()((((()))))(()())(())(()(()(()))()(()((((()((()()()())))()((())()()())(())))()((((())()())(())))(()(()(())))))))))))))))))))))))))))))))
-Next symbol: (
-Steps of leftmost derivation:
-B -> (RB
-
-Remaining Input: ()(((((()))()()))()((((()(()((())()())))(((()))(((((()))())((())(())))((((((())()(()))((()(((()()))(()())(())(()))()()()())()()((((())(()(())))(())))())(((())(((()))((())()())())()())()(((()(((((())()(((()))))))()(()(()(()((()(()(()((()())((()(())()())()(()())(()())(())))()()())((()))()((())))))()()(()))))(())())))()(()((()(()))((())((())())((((()))((()()))))()(()()((((()())()))))((((())()(()))(()(()((()(())))()())()()))()()))())())()()())()(()(())((()()))))(())))))()(()))))())(((()()(()(())))(()(())((())))(()))(()((()())))))))()(((()((())))))((()(()()()()((((((((()())()(()))()())())())))(())())())))((((()))))((())()(((()(((()())))(())((((((())))(()))(()))(((()()())))(()((()())()((()(()((())()(())()(((()()))()))))((((((()))((()((()(()))()))((())((()()()(((()))())()()))((())(((()())())(((()))))()((())((()()()()((()()(()(()()((((()(())))))(((()(((()(((()(()))(())()(())))))()))))()(((()((((()))))(()())(())(()(()(()))()(()((((()((()()()())))()((())()()())(())))()((((())()())(())))(()(()(())))))))))))))))))))))))))))))))
-Next symbol: (
-Steps of leftmost derivation:
-B -> (RB
-R -> (RR
-
-Remaining Input: )(((((()))()()))()((((()(()((())()())))(((()))(((((()))())((())(())))((((((())()(()))((()(((()()))(()())(())(()))()()()())()()((((())(()(())))(())))())(((())(((()))((())()())())()())()(((()(((((())()(((()))))))()(()(()(()((()(()(()((()())((()(())()())()(()())(()())(())))()()())((()))()((())))))()()(()))))(())())))()(()((()(()))((())((())())((((()))((()()))))()(()()((((()())()))))((((())()(()))(()(()((()(())))()())()()))()()))())())()()())()(()(())((()()))))(())))))()(()))))())(((()()(()(())))(()(())((())))(()))(()((()())))))))()(((()((())))))((()(()()()()((((((((()())()(()))()())())())))(())())())))((((()))))((())()(((()(((()())))(())((((((())))(()))(()))(((()()())))(()((()())()((()(()((())()(())()(((()()))()))))((((((()))((()((()(()))()))((())((()()()(((()))())()()))((())(((()())())(((()))))()((())((()()()()((()()(()(()()((((()(())))))(((()(((()(((()(()))(())()(())))))()))))()(((()((((()))))(()())(())(()(()(()))()(()((((()((()()()())))()((())()()())(())))()((((())()())(())))(()(()(())))))))))))))))))))))))))))))))
-Next symbol: )
-Steps of leftmost derivation:
-B -> (RB
-R -> (RR
-R -> )
-
+S (Initial: S)
+iCtS (S -> iCtSA, A -> ε)
+iCtiCt(S);eS (S -> iCt(S);eS)
+iCtiCt(iCtS);eS (S -> iCtSA, A -> ε)
+iCtiCt(iCtiCtS);eS (S -> iCtSA, A -> ε)
+iCtiCt(iCtiCtiCt(S);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(S);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtS;eS);eS);eS);eS (S -> iCtSA, A -> ;eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(S);eS;eS);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(S);eS);eS;eS);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(S);eS);eS);eS;eS);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ;eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ;eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(S);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ε)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(S);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ;eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ;eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(S);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(S);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(S);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ;eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ;eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ;eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(S);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCtS);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ε)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCtiCtS);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ε)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCtiCtiCtS);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ε)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCtiCtiCtiCt(S);eS);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCtiCtiCtiCt(iCt(S);eS);eS);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCtiCtiCtiCt(iCt(iCtS);eS);eS);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ε)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCtiCtiCtiCt(iCt(iCtiCtS;eS);eS);eS);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ;eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCtiCtiCtiCt(iCt(iCtiCtiCt(S);eS;eS);eS);eS);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCtiCtiCtiCt(iCt(iCtiCtiCt(iCt(S);eS);eS;eS);eS);eS);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCtiCtiCtiCt(iCt(iCtiCtiCt(iCt(iCt(S);eS);eS);eS;eS);eS);eS);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCtiCtiCtiCt(iCt(iCtiCtiCt(iCt(iCt(iCtS;eS);eS);eS);eS;eS);eS);eS);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ;eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCtiCtiCtiCt(iCt(iCtiCtiCt(iCt(iCt(iCtiCtS;eS;eS);eS);eS);eS;eS);eS);eS);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ;eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCtiCtiCtiCt(iCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtS;eS;eS;eS);eS);eS);eS;eS);eS);eS);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ;eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCtiCtiCtiCt(iCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(S);eS;eS;eS;eS);eS);eS);eS;eS);eS);eS);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCtiCtiCtiCt(iCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCt(S);eS);eS;eS;eS;eS);eS);eS);eS;eS);eS);eS);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCt(S);eS)
+iCtiCt(iCtiCtiCt(iCt(iCtiCt(iCt(iCt(iCtiCtiCt(iCtiCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCtiCtiCtiCt(iCt(iCtiCtiCt(iCt(iCt(iCtiCtiCtiCt(iCt(iCtS;eS);eS);eS;eS;eS;eS);eS);eS);eS;eS);eS);eS);eS;eS;eS;eS);eS);eS);eS;eS;eS);eS);eS;eS;eS);eS);eS);eS;eS);eS);eS);eS (S -> iCtSA, A -> ;eS)

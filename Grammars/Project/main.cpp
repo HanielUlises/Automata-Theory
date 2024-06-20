@@ -1,6 +1,7 @@
 #include "Programs/Program1/PDA.h"
 #include "Programs/Program2/grammar.h"
 #include "Programs/Program3/grammar.h"
+#include "Programs/Program4/TuringMachine.h"
 #include <iostream>
 #include <random>
 #include <stack>
@@ -32,6 +33,7 @@ std::string generateRandomBalancedParentheses(int maxDepth) {
 
     return str;
 }
+
 
 void runProgram1() {
     PDA pda;
@@ -119,11 +121,46 @@ void runProgram3() {
     std::cout << "Parsing complete. Derivations saved to 'derivations.txt'." << std::endl;
 }
 
+void runProgram4() {
+    TuringMachine tm;
+    std::string input_string;
+
+    std::cout << "Enter 'manual' to input a string or 'random' for a random string: ";
+    std::string choice;
+    std::cin >> choice;
+
+    if (choice == "manual") {
+        std::cout << "Enter a string of form 0^n1^n: ";
+        std::cin >> input_string;
+    } else if (choice == "random") {
+        input_string = generateRandomString();
+        std::cout << "Generated random string: " << input_string << "\n";
+    } else {
+        std::cerr << "Invalid choice" << std::endl;
+        return;
+    }
+
+    bool result = tm.process(input_string);
+    std::cout << "The input string is " << (result ? "accepted" : "rejected") << " by the Turing machine." << std::endl;
+
+    std::string filename = "instantaneous_descriptions.txt";
+    tm.printInstantaneousDescriptions(input_string, filename);
+    std::cout << "Instantaneous descriptions written to " << filename << std::endl;
+
+    std::cout << "Do you want to visualize the Turing machine operation? (yes/no): ";
+    std::cin >> choice;
+
+    if (choice == "yes") {
+        tm.visualize(input_string);
+    }
+}
+
 int main() {
     std::cout << "Select the program you wish to run:\n";
     std::cout << "1. PDA Program\n";
     std::cout << "2. Backus-Naur Form Grammar for IF\n";
     std::cout << "3. Balanced Parentheses Grammar\n";
+    std::cout << "4. Turing Machine Program\n";
     std::cout << "Enter the program number: ";
 
     int choice;
@@ -139,8 +176,11 @@ int main() {
         case 3:
             runProgram3();
             break;
+        case 4:
+            runProgram4();
+            break;
         default:
-            std::cerr << "Invalid option. Please choose 1, 2, or 3." << std::endl;
+            std::cerr << "Invalid option. Please choose 1, 2, 3, or 4." << std::endl;
             return 1;
     }
 
