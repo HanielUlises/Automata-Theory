@@ -1,15 +1,39 @@
 %{
     // C-Support code declarations/functions
     // Supportive data structures BEGIN
+    typedef struct lex_data_{
+        int token_code;
+        int token_len;
+        char *token_val;
+    } lex_data_t;
 
+    #define MAX_MEXPR_LEN 512
+
+    typedef struct stack_{
+        int top;
+        lex_data_t data[MAX_MEXPR_LEN];
+    }stack_t;
 
     // Supportive data structures END
 
     // Global variables for the use of the parser BEGIN
     extern "C" int yylex();
     extern lex_buffer[512];
-
+    stack_t undo_stack = {-1,{0,0,0}};
     char lex_buffer[512];
+
+    // Basic stack functions 
+    static void lex_push(lex_data_t lex_data){
+        assert(undo_stack.top < MAX_MEXPR_LEN - 1);
+        undo_stack.data[++undo_stack.top] = lex_data;
+    }
+
+    static lex_data_t lex_pop (){
+        assert(undo_stack.top > -1);
+        // Obtained from
+        lex_data_t res = undo_stack.data[undo_stack.top];
+        return res;
+    }
     // Global variables for the use of the parser END
 
     #include "expr_enums.h"
@@ -43,7 +67,7 @@
 }
 
 .{
-    // Non-parsable character
+    // Non-parseable character
 }
 
 %%
